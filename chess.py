@@ -6,11 +6,30 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as clr
-matrix = np.array([[1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8,]])
+x=int(input())
+y=int(input())
+fig, ax = plt.subplots()
+matrix = np.array([[0,1,0,1,0,1,0,1],[1,0,1,0,1,0,1,0,],[0,1,0,1,0,1,0,1],[1,0,1,0,1,0,1,0,],[0,1,0,1,0,1,0,1],[1,0,1,0,1,0,1,0,],[0,1,0,1,0,1,0,1],[1,0,1,0,1,0,1,0,]])
 print(matrix)
-plt.imshow(data, cmap='viridis')
-plt.colorbar(label="Интенсивность")
-plt.title("Тепловая карта")
+plt.imshow(matrix, cmap='hot')
+plt.title("CHESS BOARD")
+
+#coordinates
+
+
+circle = plt.Circle((x, y), radius=(0.4) , color='green')
+for i in range(8):
+    circle1 = plt.Circle((x+i, y+i), radius=(0.2), color='red')
+    ax.add_patch(circle1)
+    circle2 = plt.Circle((x -i, y + i), radius=(0.2), color='red')
+    ax.add_patch(circle2)
+    circle3 = plt.Circle((x - i, y - i), radius=(0.2), color='red')
+    ax.add_patch(circle3)
+    circle4 = plt.Circle((x + i, y - i), radius=(0.2), color='red')
+    ax.add_patch(circle4)
+
+
+ax.add_patch(circle)
+#ax.plot([0, 1], [0, 1], label="Прямая линия")
 plt.show()
-def sdelai_docsku(board):
-    board = np.zeros(shape:(size,size), dtype = int)
+# facecolor='yellow'
