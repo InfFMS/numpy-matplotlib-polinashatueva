@@ -27,7 +27,14 @@ for i in range(8):
     ax.add_patch(circle3)
     circle4 = plt.Circle((x + i, y - i), radius=(0.2), color='red')
     ax.add_patch(circle4)
-
+    circle5 = plt.Circle((x + i, y ), radius=(0.2), color='red')
+    ax.add_patch(circle5)
+    circle6 = plt.Circle((x - i, y), radius=(0.2), color='red')
+    ax.add_patch(circle6)
+    circle7 = plt.Circle((x, y - i), radius=(0.2), color='red')
+    ax.add_patch(circle7)
+    circle8 = plt.Circle((x, y + i), radius=(0.2), color='red')
+    ax.add_patch(circle8)
 
 ax.add_patch(circle)
 #ax.plot([0, 1], [0, 1], label="Прямая линия")
