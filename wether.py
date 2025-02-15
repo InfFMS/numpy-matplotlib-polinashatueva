@@ -20,7 +20,7 @@ print(c)
 s = 0
 for i in range(len(a)):
     s = s +a[i]
-print(s/365)
+print("average temperature", s/365)
 
 x= 0
 for t in range(len(a)):
@@ -44,4 +44,39 @@ def zzz(okk):
 
     return max(max_count, current_count)
 
-print(zzz(a))
+print("the longest sequence", zzz(a))
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Данные
+x = np.linspace(1, 365, 365)  # 100 точек от -10 до 10
+y = a
+
+days = range(1, 366)
+unique_temp, days = np.unique(a, return_counts=True)
+plt.bar(unique_temp, days, color='red')
+plt.title("Распределение температуры по дням")
+plt.show()
+
+# Построение графиков
+plt.plot(x, y,  color="yellow")
+for i in range(len(a)):
+    temp = a[i]
+    if temp < 0:
+        plt.scatter([i], [temp], color='blue')
+    if temp > 15:
+        plt.scatter([i], [temp], color='red')
+
+# Настройка
+plt.title("как график на англ")
+plt.xlabel("дэйз")
+plt.ylabel("темпречер")
+plt.show()
+
+
+
+
+
+
+
